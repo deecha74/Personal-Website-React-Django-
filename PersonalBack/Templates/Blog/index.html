@@ -1,0 +1,33 @@
+{%load static %} {% load tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    {% tailwind_css %}
+  </head>
+  <body>
+    <div class="flex items-center justify-center h-[90lvh] bg-gray-100">
+      <div>
+        <table class="border-2 table-fixed">
+          <tr class="flex flex-row gap-4">
+            <th class="text-2xl text-red-500">Title</th>
+            <th class="text-2xl text-red-500">Description</th>
+            <th class="text-2xl text-green-600">Category</th>
+            <th class="text-2xl text-green-600">Image</th>
+          </tr>
+          {%for item in Blog%}
+          <tr class="flex flex-row gap-4">
+            <td>{{item.post_title}}</td>
+            <td class="text-red-900">{{item.post_description}}</td>
+            <td>{{item.Category}}</td>
+            <td><img src="/{{item.post_image}}" alt="" /></td>
+          </tr>
+          {%endfor%}
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

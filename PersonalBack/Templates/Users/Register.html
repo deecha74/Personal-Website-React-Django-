@@ -1,0 +1,52 @@
+{% load crispy_forms_tags %} {% load tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration</title>
+    {% tailwind_css %}
+  </head>
+  <body class="h-screen w-full flex items-center justify-center bg-gray-100">
+    <div class="grid grid-cols-2 gap-1">
+      <div
+        class="login p-3 px-8 shadow-xl rounded-tl-[170px] bg-[#3889db] text-white flex items-center justify-center h-96 flex-col gap-4"
+      >
+        <h1 class="font-bold text-3xl">Welcome to Register!</h1>
+        <h1 class="font-thin">
+          Already Have an Account!
+          <a href="" class="underline cursor-pointer">Login Here</a>
+        </h1>
+      </div>
+      <div
+        class="login bg-gray-200    rounded-br-[170px] shadow-xl flex items-center justify-center h-96 flex-col"
+      >
+      
+
+        <form action="" method="POST" class="flex p-4 flex-col">
+          {% csrf_token %}
+            <div class="flex mb-4 flex-col">
+              <h1 class="flex items-center justify-center">Username</h1>
+              <div class="flex mb-4-60">{{ forms.username }}</div>
+            </div>
+            <h1 class="flex items-center justify-center">Email</h1>
+            <div class="flex mb-4">{{ forms.email }}</div>
+            <h1 class="flex items-center justify-center">Password</h1>
+
+            <div class="flex mb-4">{{ forms.password1 }}</div>
+            <h1 class="flex items-center justify-center">Confirm Password</h1>
+
+            <div class="flex mb-4">{{ forms.password2 }}</div>
+
+            <button
+              class="bg-gradient-to-r w-1/2 active:scale-95 from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
+              type="submit"
+            >
+              Register
+            </button>
+           
+        </form>
+       
+    </div>
+  </body>
+</html>

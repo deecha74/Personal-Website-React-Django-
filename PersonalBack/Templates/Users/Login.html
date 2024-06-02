@@ -1,0 +1,52 @@
+{%load crispy_forms_tags%}
+{% load tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {%tailwind_css%}
+  </head>
+  <body class="h-lvh w-full flex items-center justify-center">
+    <div class="grid grid-cols-2 gap-1">
+      <div
+        class="login p-3 px-8 shadow-xl rounded-tl-[170px] bg-[#3889db] text-white flex items-center justify-center h-96 flex-col gap-4"
+      >
+        <h1 class="font-bold text-3xl">Welcome to Login !</h1>
+        <h1 class="font-thin">
+          Don't Have an Account !
+          <a href="" class="underline cursor-pointer">Register Here </a>
+        </h1>
+      </div>
+      <div
+        class="login bg-gray-200 rounded-br-[170px] shadow-xl flex items-center justify-center h-96 flex-col  gap-4"
+      >
+         
+           
+          
+          <form class="flex flex-col gap-3" method="post" >
+             {%csrf_token%}
+             {{forms| crispy}}
+            <div class="flex items-center justify-center gap-7 text-sm px-0 mx-0">
+                <div><input type="checkbox" name="" id="" class="text-sm"> Remember Me </div>
+                <div class=" hover:underline"> <a class="text-sm text-[#3889db]" class="hover:underline" href="#"
+                    >Forgot password!
+                  </a>
+    </div>
+              
+             
+            </div>
+            <button
+              type="submit"
+              class="bg-[#3889db] active:scale-95 transition-all duration-200 ease-in-out w-max m-auto px-6 py-2 rounded text-white text-sm font-normal"
+            >
+              Submit
+            </button>
+          </form>
+           
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

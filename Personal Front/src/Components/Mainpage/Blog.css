@@ -1,0 +1,8 @@
+@media screen and (max-width: 640px) {
+  .blogs {
+    @apply flex flex-wrap flex-row;
+  }
+  p {
+    @apply line-clamp-2;
+  }
+}

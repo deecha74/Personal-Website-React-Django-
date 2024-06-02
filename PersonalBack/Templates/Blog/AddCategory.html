@@ -1,0 +1,33 @@
+{% load crispy_forms_tags %}{%load tailwind_tags%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {%tailwind_css%}
+  </head>
+  <body>
+    <h1
+      class="text-4xl text-blue-600 flex pt-5 items-center shadow-md p-3 font-mono justify-center"
+    >
+      Add category
+    </h1>
+
+    <div class="flex items-center justify-center gap-3">
+      <form action="" method="POST" enctype="multipart/form-data">
+        {%csrf_token%} {{ cforms|crispy}}
+        <input
+          type="submit"
+          class="text-white hover:bg-blue-600 transition-all ease-in-out duration-100 uppercase cursor-pointer bg-blue-500 mt-5 p-3 rounded-lg text-xl font-serif active:scale-95"
+          value="Add Category"
+        />
+      </form>
+    </div>
+    <div>
+      <h1 class="flex items-center justify-center mt-5 underline">
+        <a href="/post">Home</a>
+      </h1>
+    </div>
+  </body>
+</html>

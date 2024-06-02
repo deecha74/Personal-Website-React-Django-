@@ -1,0 +1,11 @@
+@media screen and (max-width: 640px) {
+  .footer-image {
+    @apply h-32;
+  }
+  .bodys {
+    @apply h-32;
+  }
+  .footer-icons {
+    @apply px-16;
+  }
+}
