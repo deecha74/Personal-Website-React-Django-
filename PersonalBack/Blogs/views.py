@@ -18,7 +18,7 @@ def index(request):
 
 
     return render (request,'base.html',context)
-
+@login_required()
 def show_category(request):
     category=Category.objects.all()
     context={

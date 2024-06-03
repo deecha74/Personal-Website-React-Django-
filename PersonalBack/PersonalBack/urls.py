@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path , include
 from django.http import HttpResponse 
+from Api import views
 
 # def index(request):
 #     return HttpResponse("Helooooooooooooo")
@@ -27,6 +28,8 @@ urlpatterns = [
      path('post/', include ('Blogs.urls')),
      path("__reload__/", include("django_browser_reload.urls")),
      path("", include("userpage.urls")),
+     path('api-auth/', include('rest_framework.urls')),
+     path('api/posts',views.PostList.as_view()),
 
 ]
   

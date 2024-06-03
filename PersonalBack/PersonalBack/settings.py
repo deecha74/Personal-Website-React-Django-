@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     "crispy_bootstrap4",
     'userpage',
+    'Api',
+    'rest_framework',
      
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
@@ -137,7 +139,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 
 

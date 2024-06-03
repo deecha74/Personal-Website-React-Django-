@@ -12,7 +12,7 @@ class BlogPost(models.Model):
     post_title=models.CharField(max_length=255)
     post_description=models.TextField()
     post_created=models.DateTimeField( auto_now_add=True ,null=True)
-    post_image=models.FileField(upload_to='Static/', null=True)
+    post_image=models.FileField( null=True)
     Category=models.ForeignKey(Category , on_delete=models.CASCADE ,null=True)
 
     def __str__(self) :
